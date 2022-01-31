@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Router, { useRouter } from "next/router";
 
+import Logo from "../../../public/images/common/logo.svg";
 import Container from "../common/Container";
 import Menu from "../common/Menu";
 
@@ -51,7 +52,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-[20px] md:py-[40px]">
           <Link href="/">
             <a>
-              <Image src="/images/common/logo.svg" width={150} height={37.59} quality={100} alt="" />
+              <Logo />
             </a>
           </Link>
           {isHome ? null : btn}
