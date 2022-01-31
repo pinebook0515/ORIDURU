@@ -1,0 +1,19 @@
+.menu_listItem {
+}
+.menu_listItem:hover {
+  @apply lg:bg-white/[0.02] lg:transition-all lg:duration-500;
+}
+.menu_listItem + .menu_listItem {
+  @apply border-t-[1px] border-black-light;
+}
+
+.menu_heading::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/images/common/arrow.svg");
+}

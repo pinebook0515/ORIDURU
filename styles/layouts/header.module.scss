@@ -1,0 +1,11 @@
+.menu_nav {
+  @apply bg-black;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(100%);
+
+  &.open {
+    transform: translate(0);
+  }
+}
