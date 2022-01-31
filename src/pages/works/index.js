@@ -15,21 +15,31 @@ const Works = ({ data }) => {
           {data.map((work) => {
             return (
               <li className="" key={work.id}>
-                <Link href={`/works/${work.id}`}>
-                  <a>
-                    <div className="">
-                      <div className="w-full h-[215px] object-contain rounded-[10px] overflow-hidden">
-                        {work.isprotect ? (
+                {work.isprotect ? (
+                  <Link href={`/works/private/${work.id}`}>
+                    <a>
+                      <div className="">
+                        <div className="w-full h-[215px] object-contain rounded-[10px] overflow-hidden">
                           <Image src="/images/works/password.png" layout="responsive" width={780} height={477.06} alt="" />
-                        ) : (
-                          <Image src={work.thumbnail.url} className="z-[-1]" layout="responsive" width={work.thumbnail.width} height={work.thumbnail.height} alt="" />
-                        )}
+                        </div>
+                        <h2 className="">非公開実績</h2>
+                        <p className="">{work.purpose}</p>
                       </div>
-                      <h2 className="">{work.title}</h2>
-                      <p className="">{work.purpose}</p>
-                    </div>
-                  </a>
-                </Link>
+                    </a>
+                  </Link>
+                ) : (
+                  <Link href={`/works/${work.id}`}>
+                    <a>
+                      <div className="">
+                        <div className="w-full h-[215px] object-contain rounded-[10px] overflow-hidden">
+                          <Image src={work.thumbnail.url} className="z-[-1]" layout="responsive" width={work.thumbnail.width} height={work.thumbnail.height} alt="" />
+                        </div>
+                        <h2 className="">{work.title}</h2>
+                        <p className="">{work.purpose}</p>
+                      </div>
+                    </a>
+                  </Link>
+                )}
               </li>
             );
           })}
