@@ -12,7 +12,7 @@ export const middleware = (req: NextRequest) => {
     }
   }
 
-  return new Response("Auth required", {
+  return new Response("認証に失敗しました。", {
     status: 401,
     headers: {
       "WWW-Authenticate": 'Basic realm="Secure Area"',

@@ -65,6 +65,9 @@
   p {
     @apply text-gray text-[14px] mt-[16px] lg:text-[16px];
   }
+  a {
+    text-decoration: underline;
+  }
   img {
     z-index: -1;
     border-radius: 10px;
