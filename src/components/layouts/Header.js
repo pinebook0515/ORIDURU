@@ -51,7 +51,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-[20px] md:py-[40px]">
           <Link href="/">
             <a>
-              <Image src="/images/common/logo.svg" width={150} height={37.59} alt="" />
+              <Image src="/images/common/logo.svg" width={150} height={37.59} quality={100} alt="" />
             </a>
           </Link>
           {isHome ? null : btn}
