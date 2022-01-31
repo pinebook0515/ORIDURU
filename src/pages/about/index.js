@@ -1,5 +1,6 @@
 import styles from "@/styles/page/about.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "../../components/common/Container";
 
 const About = () => {
@@ -10,9 +11,9 @@ const About = () => {
         <div className={`${styles.content}`}>
           <p>
             はじめまして。マツモト タクム
-            <a href="https://twitter.com/MatsumotoTakumu" target="_blank">
-              （@MatsumotoTakumu）
-            </a>
+            <Link href="https://twitter.com/MatsumotoTakumu">
+              <a target="_blank">（@MatsumotoTakumu）</a>
+            </Link>
             といいます。
           </p>
           <div className="rounded-[10px] overflow-hidden my-[40px] lg:my-[60px]">
@@ -22,9 +23,9 @@ const About = () => {
           <p>現在、フリーランスのWebデザイナー・フロントエンドエンジニア・Webディレクターとして活動しています。</p>
           <p>
             また
-            <a href="https://habiness.jp/" target="_blank">
-              「Habiness」
-            </a>
+            <Link href="https://habiness.jp/">
+              <a target="_blank">「Habiness」</a>
+            </Link>
             という習慣化をサポートするサービスの事業オーナーでもあります。
           </p>
           <p>あなたがどういう経緯でこのサイトにたどり着いたかわかりませんが、何かしら私に興味を持ってくれているのだと前向きに捉えることにします。</p>
