@@ -23,7 +23,7 @@ const About = () => {
           <p>
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
           </p>
-          <div className="my-[40px] lg:my-[60px]">
+          <div className="rounded-[10px] overflow-hidden my-[40px] lg:my-[60px]">
             <Image src="/images/common/sample.png" layout="responsive" width={327} height={200} alt="" />
           </div>
           <p>

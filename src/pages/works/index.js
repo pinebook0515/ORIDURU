@@ -2,58 +2,39 @@ import styles from "@/styles/page/worksIndex.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "../../components/common/Container";
+import { parseISO, format } from "date-fns";
+import { client } from "../../../lib/client";
 
-const Works = () => {
+const Works = ({ data }) => {
   return (
     <Container>
       <div className="mt-[160px] md:mt-[200px]">
         <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Works</h1>
+
         <ul className={`${styles.works_list} mt-[80px] lg:grid lg:grid-cols-2 lg:gap-[80px]`}>
-          <li className="">
-            <Link href="/about">
-              <a>
-                <div className="">
-                  <Image src="/images/common/sample.png" className="z-[-1]" layout="responsive" width={327} height={200} alt="" />
-                  <h2 className="">株式会社サンプル</h2>
-                  <p className="">サービスサイト</p>
-                </div>
-              </a>
-            </Link>
-          </li>
-          <li className="">
-            <Link href="/about">
-              <a>
-                <div className="">
-                  <Image src="/images/common/sample.png" className="z-[-1]" layout="responsive" width={327} height={200} alt="" />
-                  <h2 className="">株式会社サンプル</h2>
-                  <p className="">サービスサイト</p>
-                </div>
-              </a>
-            </Link>
-          </li>
-          <li className="">
-            <Link href="/about">
-              <a>
-                <div className="">
-                  <Image src="/images/common/sample.png" className="z-[-1]" layout="responsive" width={327} height={200} alt="" />
-                  <h2 className="">株式会社サンプル</h2>
-                  <p className="">サービスサイト</p>
-                </div>
-              </a>
-            </Link>
-          </li>
-          <li className="">
-            <Link href="/about">
-              <a>
-                <div className="">
-                  <Image src="/images/common/sample.png" className="z-[-1]" layout="responsive" width={327} height={200} alt="" />
-                  <h2 className="">株式会社サンプル</h2>
-                  <p className="">サービスサイト</p>
-                </div>
-              </a>
-            </Link>
-          </li>
+          {data.map((work) => {
+            return (
+              <li className="" key={work.id}>
+                <Link href={`/works/${work.id}`}>
+                  <a>
+                    <div className="">
+                      <div className="w-full h-[215px] object-contain rounded-[10px] overflow-hidden">
+                        {work.isprotect ? (
+                          <Image src="/images/works/password.png" layout="responsive" width={780} height={477.06} alt="" />
+                        ) : (
+                          <Image src={work.thumbnail.url} className="z-[-1]" layout="responsive" width={work.thumbnail.width} height={work.thumbnail.height} alt="" />
+                        )}
+                      </div>
+                      <h2 className="">{work.title}</h2>
+                      <p className="">{work.purpose}</p>
+                    </div>
+                  </a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
+
         <div className={`${styles.pager}`}>
           <Link href="/">
             <a className={`${styles.pager_prev}`}>Prev</a>
@@ -68,3 +49,13 @@ const Works = () => {
 };
 
 export default Works;
+
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "works", queries: { orders: "-publishedAt" } });
+
+  return {
+    props: {
+      data: data.contents,
+    },
+  };
+};
