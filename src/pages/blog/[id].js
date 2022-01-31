@@ -3,41 +3,37 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "../../components/common/Container";
 
-const Blog = () => {
+import { parseISO, format } from "date-fns";
+import { client } from "../../../lib/client";
+
+const Blog = ({ data }) => {
   return (
     <Container>
       <div className="mt-[160px] md:mt-[200px]">
-        <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">記事タイトルが入ります。記事タイトルが入ります。</h1>
-        <time className="text-gray text-[12px] lg:text-[14px]">2022/02/01</time>
-        <div className={`${styles.content}`}>
-          <p>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </p>
-          <h1>見出しが入ります。見出しが入ります。見出しが入ります。見出しが入ります。</h1>
-          <p>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </p>
-          <h2>見出しが入ります。見出しが入ります。見出しが入ります。見出しが入ります。</h2>
-          <p>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </p>
-          <h3>見出しが入ります。見出しが入ります。見出しが入ります。見出しが入ります。</h3>
-          <p>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </p>
-          <div className="my-[40px]">
-            <Image src="/images/common/sample.png" layout="responsive" width={327} height={200} alt="" />
-          </div>
-          <p>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </p>
-          <blockquote>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </blockquote>
-        </div>
+        <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">{data.title}</h1>
+        <time className="text-gray text-[12px] lg:text-[14px]">{format(new Date(data.publishedAt), "yyyy.MM.dd")}</time>
+        <div className={`${styles.content}`} dangerouslySetInnerHTML={{ __html: data.content }} />
       </div>
     </Container>
   );
 };
 
 export default Blog;
+
+export const getStaticPaths = async () => {
+  const data = await client.get({ endpoint: "blog" });
+
+  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const data = await client.get({ endpoint: "blog", contentId: id });
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+};
