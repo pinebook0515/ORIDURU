@@ -2,7 +2,6 @@ import styles from "@/styles/page/worksDetail.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "../../components/common/Container";
-
 import { parseISO, format } from "date-fns";
 import { client } from "../../../lib/client";
 
