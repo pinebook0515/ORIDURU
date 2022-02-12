@@ -69,9 +69,7 @@
     text-decoration: underline;
   }
   strong {
-    color: $color-white;
-    font-weight: bold;
-    background-color: $color-black-light;
+    @apply text-white bg-black-light font-[700];
   }
   img {
     z-index: -1;
