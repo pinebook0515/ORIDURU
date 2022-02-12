@@ -68,6 +68,11 @@
   a {
     text-decoration: underline;
   }
+  strong {
+    color: $color-white;
+    font-weight: bold;
+    background-color: $color-black-light;
+  }
   img {
     z-index: -1;
     border-radius: 10px;
