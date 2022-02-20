@@ -1,0 +1,19 @@
+.contact__form {
+  .contact__form_label {
+    @apply text-gray text-[13px] mt-[16px] lg:text-[16px];
+  }
+  input,
+  textarea {
+    @apply text-white text-[15px] rounded-[5px] pl-[12px] py-[8px] mt-[8px] bg-black-dark lg:text-[16px];
+  }
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-[#666];
+  }
+  textarea {
+    min-height: 160px;
+  }
+  button {
+    @apply text-black text-[13px] rounded-[5px] px-[24px] py-[8px];
+  }
+}
