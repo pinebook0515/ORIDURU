@@ -6,7 +6,7 @@ import Pagination from "../../../components/common/Pagination";
 import { parseISO, format } from "date-fns";
 import { client } from "../../../../lib/client";
 
-const PER_PAGE = 5;
+const PER_PAGE = 6;
 
 const Works = ({ data, totalCount, currentPageNumber }) => {
   return (
@@ -66,7 +66,7 @@ export const getStaticPaths = async () => {
 // データを取得
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "works", queries: { orders: "-publishedAt", offset: (id - 1) * 5, limit: 5 } });
+  const data = await client.get({ endpoint: "works", queries: { orders: "-publishedAt", offset: (id - 1) * 6, limit: 6 } });
 
   return {
     props: {

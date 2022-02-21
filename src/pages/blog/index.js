@@ -6,7 +6,7 @@ import { parseISO, format } from "date-fns";
 import { client } from "../../../lib/client";
 
 const Blog = ({ data, totalCount }) => {
-  const PER_PAGE = 5;
+  const PER_PAGE = 6;
   return (
     <Container>
       <div className="mt-[160px] md:mt-[200px]">
@@ -37,7 +37,7 @@ const Blog = ({ data, totalCount }) => {
 export default Blog;
 
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog", queries: { orders: "-publishedAt", offset: 0, limit: 5 } });
+  const data = await client.get({ endpoint: "blog", queries: { orders: "-publishedAt", offset: 0, limit: 6 } });
 
   return {
     props: {

@@ -5,9 +5,9 @@ import PaginationArrow from "../../../components/common/Pagination";
 import { parseISO, format } from "date-fns";
 import { client } from "../../../../lib/client";
 
-const PER_PAGE = 5;
+const PER_PAGE = 6;
 
-export default function BlogPageId({ data, totalCount, currentPageNumber }) {
+const BlogPageId = ({ data, totalCount, currentPageNumber }) => {
   return (
     <Container>
       <div className="mt-[160px] md:mt-[200px]">
@@ -33,7 +33,9 @@ export default function BlogPageId({ data, totalCount, currentPageNumber }) {
       </div>
     </Container>
   );
-}
+};
+
+export default BlogPageId;
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
@@ -47,7 +49,7 @@ export const getStaticPaths = async () => {
 // データを取得
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", queries: { orders: "-publishedAt", offset: (id - 1) * 5, limit: 5 } });
+  const data = await client.get({ endpoint: "blog", queries: { orders: "-publishedAt", offset: (id - 1) * 6, limit: 6 } });
 
   return {
     props: {

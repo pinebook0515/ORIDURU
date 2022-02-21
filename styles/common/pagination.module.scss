@@ -1,7 +1,7 @@
 .pager {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
+  display: flex;
+  //   grid-template-columns: auto auto;
+  justify-content: flex-start;
   margin-top: 60px;
 
   a:hover {
@@ -27,7 +27,7 @@
   .pager_next {
     display: flex;
     align-items: center;
-    @apply font-en text-gray text-[13px];
+    @apply font-en text-gray text-[13px] ml-auto;
 
     &::after {
       content: "";
