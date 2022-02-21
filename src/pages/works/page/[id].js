@@ -1,13 +1,14 @@
 import styles from "@/styles/page/worksIndex.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import Container from "../../components/common/Container";
-import Pagination from "../../components/common/Pagination";
+import Container from "../../../components/common/Container";
+import Pagination from "../../../components/common/Pagination";
 import { parseISO, format } from "date-fns";
-import { client } from "../../../lib/client";
+import { client } from "../../../../lib/client";
 
-const Works = ({ data, totalCount }) => {
-  const PER_PAGE = 5;
+const PER_PAGE = 5;
+
+const Works = ({ data, totalCount, currentPageNumber }) => {
   return (
     <Container>
       <div className="mt-[160px] md:mt-[200px]">
@@ -46,7 +47,7 @@ const Works = ({ data, totalCount }) => {
             );
           })}
         </ul>
-        <Pagination pathName={"works"} currentPageNumber={1} maxPageNumber={Math.ceil(totalCount / PER_PAGE)} />
+        <Pagination pathName={"works"} currentPageNumber={currentPageNumber} maxPageNumber={Math.ceil(totalCount / PER_PAGE)} />
       </div>
     </Container>
   );
@@ -54,13 +55,24 @@ const Works = ({ data, totalCount }) => {
 
 export default Works;
 
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "works", queries: { orders: "-publishedAt", offset: 0, limit: 5 } });
+export const getStaticPaths = async () => {
+  const data = await client.get({ endpoint: "works" });
+  const pageNumbers = [];
+  const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
+  const paths = range(1, Math.ceil(data.totalCount / PER_PAGE)).map((data) => `/works/page/${data}`);
+  return { paths, fallback: false };
+};
+
+// データを取得
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const data = await client.get({ endpoint: "works", queries: { orders: "-publishedAt", offset: (id - 1) * 5, limit: 5 } });
 
   return {
     props: {
       data: data.contents,
       totalCount: data.totalCount,
+      currentPageNumber: Number(id),
     },
   };
 };

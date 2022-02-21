@@ -2,6 +2,12 @@
   .contact__form_label {
     @apply text-gray text-[13px] mt-[16px] lg:text-[16px];
   }
+  .contact__form_label.required {
+    &::after {
+      content: "必須";
+      @apply text-black text-[10px] bg-[#d7d7d7] rounded-[2px] px-[4px] py-[2px] ml-[8px] lg:text-[13px];
+    }
+  }
   input,
   textarea {
     @apply text-white text-[15px] rounded-[5px] pl-[12px] py-[8px] mt-[8px] bg-black-dark lg:text-[16px];
@@ -15,5 +21,10 @@
   }
   button {
     @apply text-black text-[13px] rounded-[5px] px-[24px] py-[8px];
+    transition: 0.3s;
+
+    &:hover {
+      @apply lg:bg-white;
+    }
   }
 }
