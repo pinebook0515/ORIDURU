@@ -1,13 +1,13 @@
 import styles from "@/styles/page/contactThanks.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "../../components/common/Head";
+import SiteHead from "../../components/common/SiteHead";
 import Container from "../../components/common/Container";
 
 const Thanks = () => {
   return (
     <>
-      <Head title={"｜Contact"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Contact"} description={""} keyword={""} url={""} image={""} />
       <Container>
         <div className={`${styles.content} mt-[160px] md:mt-[200px]`}>
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Thank you :</h1>

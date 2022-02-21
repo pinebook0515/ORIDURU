@@ -20,7 +20,7 @@ const Header = () => {
     } else {
       setIsHome(false);
     }
-  });
+  }, [router.pathname]);
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);

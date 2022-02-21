@@ -1,13 +1,13 @@
 import styles from "@/styles/page/about.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "../../components/common/Head";
+import SiteHead from "../../components/common/SiteHead";
 import Container from "../../components/common/Container";
 
 const About = () => {
   return (
     <>
-      <Head
+      <SiteHead
         title={"｜About"}
         description={"ORIDURUは、フリーランスでWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
         keyword={""}

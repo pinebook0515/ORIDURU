@@ -1,6 +1,6 @@
 import styles from "@/styles/page/blogIndex.module.scss";
 import Link from "next/link";
-import Head from "../../components/common/Head";
+import SiteHead from "../../components/common/SiteHead";
 import Container from "../../components/common/Container";
 import Pagination from "../../components/common/Pagination";
 import { parseISO, format } from "date-fns";
@@ -10,7 +10,7 @@ const Blog = ({ data, totalCount }) => {
   const PER_PAGE = 6;
   return (
     <>
-      <Head title={"｜Blog"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Blog"} description={""} keyword={""} url={""} image={""} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Blog</h1>

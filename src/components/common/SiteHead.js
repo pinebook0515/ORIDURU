@@ -1,7 +1,6 @@
 import Head from "next/head";
-import defaultOgp from "../../../public/images/common/default.png";
 
-export default ({ title = "", description, keyword, url, image }) => {
+const SiteHead = ({ title = "", description, keyword, url, image }) => {
   return (
     <Head>
       <title>{`ORIDURU${title}`}</title>
@@ -34,3 +33,5 @@ export default ({ title = "", description, keyword, url, image }) => {
     </Head>
   );
 };
+
+export default SiteHead;

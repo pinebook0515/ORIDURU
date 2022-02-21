@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "@/styles/page/contact.module.scss";
-import Head from "../../components/common/Head";
+import SiteHead from "../../components/common/SiteHead";
 import Container from "../../components/common/Container";
 
 const Contact = () => {
   return (
     <>
-      <Head title={"｜Contact"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Contact"} description={""} keyword={""} url={""} image={""} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Contact</h1>

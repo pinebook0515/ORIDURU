@@ -1,7 +1,7 @@
 import styles from "@/styles/page/worksDetail.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import Head from "../../../components/common/Head";
+import SiteHead from "../../../components/common/SiteHead";
 import Container from "../../../components/common/Container";
 import { parseISO, format } from "date-fns";
 import { client } from "../../../../lib/client";
@@ -9,7 +9,7 @@ import { client } from "../../../../lib/client";
 const Work = ({ data }) => {
   return (
     <>
-      <Head title={"｜Works"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} image={""} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">{data.title}</h1>

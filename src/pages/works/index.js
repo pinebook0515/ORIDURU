@@ -1,7 +1,7 @@
 import styles from "@/styles/page/worksIndex.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import Head from "../../components/common/Head";
+import SiteHead from "../../components/common/SiteHead";
 import Container from "../../components/common/Container";
 import Pagination from "../../components/common/Pagination";
 import { parseISO, format } from "date-fns";
@@ -11,7 +11,7 @@ const Works = ({ data, totalCount }) => {
   const PER_PAGE = 6;
   return (
     <>
-      <Head title={"｜Works"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} image={""} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Works</h1>
