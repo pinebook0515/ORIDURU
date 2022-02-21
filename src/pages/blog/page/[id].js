@@ -1,5 +1,6 @@
 import styles from "@/styles/page/blogIndex.module.scss";
 import Link from "next/link";
+import Head from "../../../components/common/Head";
 import Container from "../../../components/common/Container";
 import PaginationArrow from "../../../components/common/Pagination";
 import { parseISO, format } from "date-fns";
@@ -9,29 +10,31 @@ const PER_PAGE = 6;
 
 const BlogPageId = ({ data, totalCount, currentPageNumber }) => {
   return (
-    <Container>
-      <div className="mt-[160px] md:mt-[200px]">
-        <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Blog</h1>
-
-        <ul className={`${styles.blog_list} mt-[80px]`}>
-          {data.map((blog) => {
-            return (
-              <li key={blog.id}>
-                <Link href={`/blog/${blog.id}`}>
-                  <a>
-                    <div className="">
-                      <h2 className="">{blog.title}</h2>
-                      <time className="">{format(new Date(blog.publishedAt), "yyyy.MM.dd")}</time>
-                    </div>
-                  </a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <PaginationArrow pathName={"blog"} currentPageNumber={currentPageNumber} maxPageNumber={Math.ceil(totalCount / PER_PAGE)} />
-      </div>
-    </Container>
+    <>
+      <Head title={"｜Blog"} description={""} keyword={""} url={""} image={""} />
+      <Container>
+        <div className="mt-[160px] md:mt-[200px]">
+          <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Blog</h1>
+          <ul className={`${styles.blog_list} mt-[80px]`}>
+            {data.map((blog) => {
+              return (
+                <li key={blog.id}>
+                  <Link href={`/blog/${blog.id}`}>
+                    <a>
+                      <div className="">
+                        <h2 className="">{blog.title}</h2>
+                        <time className="">{format(new Date(blog.publishedAt), "yyyy.MM.dd")}</time>
+                      </div>
+                    </a>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <PaginationArrow pathName={"blog"} currentPageNumber={currentPageNumber} maxPageNumber={Math.ceil(totalCount / PER_PAGE)} />
+        </div>
+      </Container>
+    </>
   );
 };
 

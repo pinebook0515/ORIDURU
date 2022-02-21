@@ -9,3 +9,11 @@
     transform: translate(0);
   }
 }
+.header__nav {
+  a {
+    @apply transition-all;
+  }
+  a:hover {
+    @apply text-white/[0.7] transition-all duration-500;
+  }
+}

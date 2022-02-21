@@ -32,9 +32,17 @@ const Header = () => {
 
   let btn;
   if (!openMenu) {
-    btn = <Image src="/images/common/menu-btn.svg" width={21} height={5} alt="" className="cursor-pointer" onClick={toggleMenu} />;
+    btn = (
+      <div className="lg:hidden">
+        <Image src="/images/common/menu-btn.svg" width={21} height={5} alt="" className="cursor-pointer" onClick={toggleMenu} />
+      </div>
+    );
   } else {
-    btn = <Image src="/images/common/menu-btn-close.svg" width={18} height={18} alt="" className="cursor-pointer" onClick={toggleMenu} />;
+    btn = (
+      <div className="lg:hidden">
+        <Image src="/images/common/menu-btn-close.svg" width={18} height={18} alt="" className="cursor-pointer lg:hidden" onClick={toggleMenu} />
+      </div>
+    );
   }
 
   if (process.browser) {
@@ -56,6 +64,35 @@ const Header = () => {
             </a>
           </Link>
           {isHome ? null : btn}
+          <ul className={`${styles.header__nav} lg:flex justify-end hidden`}>
+            <li className="ml-[60px]">
+              <Link href="/about">
+                <a className="font-en text-[14px] text-white">About</a>
+              </Link>
+            </li>
+            <li className="ml-[60px]">
+              <Link href="/works">
+                <a className="font-en text-[14px] text-white">Works</a>
+              </Link>
+            </li>
+            <li className="ml-[60px]">
+              <Link href="/blog">
+                <a className="font-en text-[14px] text-white">Blog</a>
+              </Link>
+            </li>
+            <li className="ml-[60px]">
+              <Link href="/contact">
+                <a className="font-en text-[14px] text-white">Contact</a>
+              </Link>
+            </li>
+            <li className="ml-[60px]">
+              <Link href="https://twitter.com/MatsumotoTakumu">
+                <a className="font-en text-[14px] text-white" target="_blank">
+                  Twitter
+                </a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </Container>
       {isHome ? null : (

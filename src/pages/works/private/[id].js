@@ -1,21 +1,25 @@
 import styles from "@/styles/page/worksDetail.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "../../../components/common/Head";
 import Container from "../../../components/common/Container";
 import { parseISO, format } from "date-fns";
 import { client } from "../../../../lib/client";
 
 const Work = ({ data }) => {
   return (
-    <Container>
-      <div className="mt-[160px] md:mt-[200px]">
-        <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">{data.title}</h1>
-        <div className="rounded-[10px] overflow-hidden my-[40px]">
-          <Image src={data.thumbnail.url} className="" layout="responsive" width={data.thumbnail.width} height={data.thumbnail.height} alt="" />
+    <>
+      <Head title={"｜Works"} description={""} keyword={""} url={""} image={""} />
+      <Container>
+        <div className="mt-[160px] md:mt-[200px]">
+          <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">{data.title}</h1>
+          <div className="rounded-[10px] overflow-hidden my-[40px]">
+            <Image src={data.thumbnail.url} className="" layout="responsive" width={data.thumbnail.width} height={data.thumbnail.height} alt="" />
+          </div>
+          <div className={`${styles.content}`} dangerouslySetInnerHTML={{ __html: data.content }} />
         </div>
-        <div className={`${styles.content}`} dangerouslySetInnerHTML={{ __html: data.content }} />
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 
