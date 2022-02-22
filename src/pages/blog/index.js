@@ -10,7 +10,7 @@ const Blog = ({ data, totalCount }) => {
   const PER_PAGE = 6;
   return (
     <>
-      <SiteHead title={"｜Blog"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Blog"} description={""} keyword={""} url={""} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Blog</h1>

@@ -11,7 +11,7 @@ const Works = ({ data, totalCount }) => {
   const PER_PAGE = 6;
   return (
     <>
-      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Works</h1>
@@ -24,7 +24,7 @@ const Works = ({ data, totalCount }) => {
                     <Link href={`/works/private/${work.id}`}>
                       <a>
                         <div className="">
-                          <div className="w-full h-[215px] object-contain rounded-[10px] overflow-hidden">
+                          <div className="w-full h-[210px] object-contain rounded-[10px] overflow-hidden">
                             <Image src="/images/works/password.png" layout="responsive" width={780} height={477.06} alt="" />
                           </div>
                           <h2 className="">非公開実績</h2>
@@ -36,7 +36,7 @@ const Works = ({ data, totalCount }) => {
                     <Link href={`/works/${work.id}`}>
                       <a>
                         <div className="">
-                          <div className="w-full h-[215px] object-contain rounded-[10px] overflow-hidden">
+                          <div className="w-full h-[210px] object-contain rounded-[10px] overflow-hidden">
                             <Image src={work.thumbnail.url} className="z-[-1]" layout="responsive" width={work.thumbnail.width} height={work.thumbnail.height} alt="" />
                           </div>
                           <h2 className="">{work.title}</h2>

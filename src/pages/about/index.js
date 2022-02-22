@@ -12,7 +12,6 @@ const About = () => {
         description={"ORIDURUは、フリーランスでWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
         keyword={""}
         url={""}
-        image={""}
       />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">

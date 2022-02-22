@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const SiteHead = ({ title = "", description, keyword, url, image }) => {
+const SiteHead = ({ title = "", description, keyword, url, image = `${process.env.NEXT_PUBLIC_BASE_URL}images/common/default.png` }) => {
   return (
     <Head>
       <title>{`ORIDURU${title}`}</title>

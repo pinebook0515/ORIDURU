@@ -5,7 +5,13 @@ import Menu from "../components/common/Menu";
 const Home = () => {
   return (
     <>
-      <SiteHead title={""} description={"ORIDURUは、フリーランスWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"} keyword={""} url={""} />
+      <SiteHead
+        title={""}
+        description={"ORIDURUは、フリーランスWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
+        keyword={""}
+        url={""}
+        image={`${process.env.NEXT_PUBLIC_BASE_URL}images/common/default.png`}
+      />
       <Container>
         <div className="mt-[120px] md:mt-[160px]">
           <Menu />
