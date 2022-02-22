@@ -11,7 +11,7 @@ const About = () => {
         title={"｜About"}
         description={"ORIDURUは、フリーランスでWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
         keyword={""}
-        url={""}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}about`}
       />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">

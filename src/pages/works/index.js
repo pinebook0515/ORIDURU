@@ -11,7 +11,7 @@ const Works = ({ data, totalCount }) => {
   const PER_PAGE = 6;
   return (
     <>
-      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} />
+      <SiteHead title={"｜Works"} description={""} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}works`} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Works</h1>

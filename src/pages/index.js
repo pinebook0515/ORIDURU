@@ -9,7 +9,7 @@ const Home = () => {
         title={""}
         description={"ORIDURUは、フリーランスWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
         keyword={""}
-        url={""}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}`}
         image={`${process.env.NEXT_PUBLIC_BASE_URL}images/common/default.png`}
       />
       <Container>
