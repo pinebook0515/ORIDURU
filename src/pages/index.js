@@ -8,7 +8,7 @@ const Home = () => {
       <SiteHead
         title={""}
         description={"ORIDURUは、フリーランスWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
-        keyword={""}
+        keyword={"テスト"}
         url={`${process.env.NEXT_PUBLIC_BASE_URL}`}
         image={`${process.env.NEXT_PUBLIC_BASE_URL}/images/common/default.png`}
       />
