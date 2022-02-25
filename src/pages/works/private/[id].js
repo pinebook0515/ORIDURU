@@ -13,7 +13,7 @@ const Work = ({ data }) => {
         title={"｜非公開実績"}
         description={"実績 - ORIDURUは、マツモトタクムが運営する個人サイトです。フリーランスでPM、WEBディレクター、デザイナー、フロントエンドエンジニアとして活動しています。"}
         keyword={""}
-        url={`${process.env.NEXT_PUBLIC_BASE_URL}/works/${data.id}`}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}/works/private/${data.id}`}
       />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
