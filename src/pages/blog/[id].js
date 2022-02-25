@@ -9,10 +9,13 @@ import { client } from "../../../lib/client";
 const Blog = ({ data }) => {
   return (
     <>
-      <SiteHead title={"｜Blog"} description={""} keyword={""} url={""} image={data.thumbnail.url} />
+      <SiteHead title={"｜Blog"} description={data.description} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${data.id}`} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
-          <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">{data.title}</h1>
+          <div className="rounded-[10px] overflow-hidden">
+            <Image src={data.thumbnail.url} className="z-[-1]" layout="responsive" width={data.thumbnail.width} height={data.thumbnail.height} alt="" />
+          </div>
+          <h1 className="page_title font-ja font-bold text-white text-[20px] mt-[40px] lg:text-[24px]">{data.title}</h1>
           <time className="text-gray text-[12px] lg:text-[14px]">{format(new Date(data.publishedAt), "yyyy.MM.dd")}</time>
           <div className={`${styles.content}`} dangerouslySetInnerHTML={{ __html: data.content }} />
         </div>

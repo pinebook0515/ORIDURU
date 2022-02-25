@@ -45,6 +45,38 @@ const Header = () => {
     );
   }
 
+  let headerMenu = (
+    <ul className={`${styles.header__nav} lg:flex justify-end hidden`}>
+      <li className="ml-[60px]">
+        <Link href="/about">
+          <a className="font-en text-[14px] text-white">About</a>
+        </Link>
+      </li>
+      <li className="ml-[60px]">
+        <Link href="/works">
+          <a className="font-en text-[14px] text-white">Works</a>
+        </Link>
+      </li>
+      <li className="ml-[60px]">
+        <Link href="/blog">
+          <a className="font-en text-[14px] text-white">Blog</a>
+        </Link>
+      </li>
+      <li className="ml-[60px]">
+        <Link href="/contact">
+          <a className="font-en text-[14px] text-white">Contact</a>
+        </Link>
+      </li>
+      <li className="ml-[60px]">
+        <Link href="https://twitter.com/MatsumotoTakumu">
+          <a className="font-en text-[14px] text-white" target="_blank">
+            Twitter
+          </a>
+        </Link>
+      </li>
+    </ul>
+  );
+
   if (process.browser) {
     const body = document.querySelector("body");
     if (openMenu) {
@@ -64,35 +96,7 @@ const Header = () => {
             </a>
           </Link>
           {isHome ? null : btn}
-          <ul className={`${styles.header__nav} lg:flex justify-end hidden`}>
-            <li className="ml-[60px]">
-              <Link href="/about">
-                <a className="font-en text-[14px] text-white">About</a>
-              </Link>
-            </li>
-            <li className="ml-[60px]">
-              <Link href="/works">
-                <a className="font-en text-[14px] text-white">Works</a>
-              </Link>
-            </li>
-            <li className="ml-[60px]">
-              <Link href="/blog">
-                <a className="font-en text-[14px] text-white">Blog</a>
-              </Link>
-            </li>
-            <li className="ml-[60px]">
-              <Link href="/contact">
-                <a className="font-en text-[14px] text-white">Contact</a>
-              </Link>
-            </li>
-            <li className="ml-[60px]">
-              <Link href="https://twitter.com/MatsumotoTakumu">
-                <a className="font-en text-[14px] text-white" target="_blank">
-                  Twitter
-                </a>
-              </Link>
-            </li>
-          </ul>
+          {isHome ? null : headerMenu}
         </div>
       </Container>
       {isHome ? null : (

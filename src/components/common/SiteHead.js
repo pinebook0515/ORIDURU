@@ -1,6 +1,12 @@
 import Head from "next/head";
 
-const SiteHead = ({ title = "", description, keyword, url, image = `${process.env.NEXT_PUBLIC_BASE_URL}images/common/default.png` }) => {
+const SiteHead = ({
+  title = "",
+  description = `ORIDURUは、マツモトタクムが運営する個人サイトです。フリーランスでPM、WEBディレクター、デザイナー、フロントエンドエンジニアとして活動しています。`,
+  keyword,
+  url,
+  image = `${process.env.NEXT_PUBLIC_BASE_URL}/images/common/default.png`,
+}) => {
   return (
     <Head>
       <title>{`ORIDURU${title}`}</title>
@@ -18,18 +24,9 @@ const SiteHead = ({ title = "", description, keyword, url, image = `${process.en
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <link rel="canonical" href={url} />
-      {/* <link
-        rel="shortcut icon"
-        href={
-          'https://cdn.qiita.com/assets/favicons/public/production-4ff10c1e1e2b5fcb353ff9cafdd56c70.ico'
-        }
-      />
-      <link
-        rel="apple-touch-icon"
-        href={
-          'https://cdn.qiita.com/assets/favicons/public/apple-touch-icon-f9a6afad761ec2306e10db2736187c8b.png'
-        }
-      /> */}
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/common/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/common/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/common/favicon-16x16.png" />
     </Head>
   );
 };

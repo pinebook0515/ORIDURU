@@ -12,7 +12,12 @@ const PER_PAGE = 6;
 const Works = ({ data, totalCount, currentPageNumber }) => {
   return (
     <>
-      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} />
+      <SiteHead
+        title={"｜Works"}
+        description={"実績 - ORIDURUは、マツモトタクムが運営する個人サイトです。フリーランスでPM、WEBディレクター、デザイナー、フロントエンドエンジニアとして活動しています。"}
+        keyword={""}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}/works/page/${currentPageNumber}`}
+      />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Works</h1>

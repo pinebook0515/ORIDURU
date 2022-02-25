@@ -9,7 +9,12 @@ import { client } from "../../../../lib/client";
 const Work = ({ data }) => {
   return (
     <>
-      <SiteHead title={"｜Works"} description={""} keyword={""} url={""} image={""} />
+      <SiteHead
+        title={"｜Works"}
+        description={"実績 - ORIDURUは、マツモトタクムが運営する個人サイトです。フリーランスでPM、WEBディレクター、デザイナー、フロントエンドエンジニアとして活動しています。"}
+        keyword={""}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}/works/${data.id}`}
+      />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-ja font-bold text-white text-[20px] lg:text-[24px]">{data.title}</h1>

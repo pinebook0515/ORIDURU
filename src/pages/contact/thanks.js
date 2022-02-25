@@ -7,7 +7,7 @@ import Container from "../../components/common/Container";
 const Thanks = () => {
   return (
     <>
-      <SiteHead title={"｜Contact"} description={""} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}/contact/thanks`} />
+      <SiteHead title={"｜Contact"} description={"お問い合わせ - お問い合わせありがとうございました。"} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}/contact/thanks`} />
       <Container>
         <div className={`${styles.content} mt-[160px] md:mt-[200px]`}>
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Thank you :</h1>

@@ -9,7 +9,7 @@ const About = () => {
     <>
       <SiteHead
         title={"｜About"}
-        description={"ORIDURUは、フリーランスでWebデザイナー・フロントエンドエンジニア・Webディレクターのマツモトタクムが運営している個人サイトです。"}
+        description={"自己紹介 - ORIDURUは、マツモトタクムが運営する個人サイトです。フリーランスでPM、WEBディレクター、デザイナー、フロントエンドエンジニアとして活動しています。"}
         keyword={""}
         url={`${process.env.NEXT_PUBLIC_BASE_URL}/about`}
       />
@@ -27,7 +27,7 @@ const About = () => {
             <div className="rounded-[10px] overflow-hidden my-[40px] lg:my-[60px]">
               <Image src="/images/common/profile.jpg" layout="responsive" width={500} height={333.37} alt="" />
             </div>
-            <p>現在、フリーランスのWebディレクター・Webデザイナー・フロントエンドエンジニアとして活動しています。</p>
+            <p>現在、フリーランスのPM・Webディレクター・Webデザイナー・フロントエンドエンジニアとして活動しています。</p>
             <p>
               また
               <Link href="https://habiness.jp/">

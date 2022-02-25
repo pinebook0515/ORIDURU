@@ -6,7 +6,12 @@ import Container from "../../components/common/Container";
 const Contact = () => {
   return (
     <>
-      <SiteHead title={"｜Contact"} description={""} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}/contact`} />
+      <SiteHead
+        title={"｜Contact"}
+        description={"お問い合わせ - お仕事のご依頼などはお問い合わせフォームからお問い合わせください。"}
+        keyword={""}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}/contact`}
+      />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <h1 className="page_title font-en font-bold text-white text-[32px] mb-[24px]">Contact</h1>
