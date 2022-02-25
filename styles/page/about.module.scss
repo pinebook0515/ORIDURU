@@ -69,7 +69,7 @@
     text-decoration: underline;
   }
   strong {
-    @apply text-white bg-black-light;
+    @apply text-white bg-black-dark p-[2px];
   }
   img {
     z-index: -1;
