@@ -9,7 +9,7 @@ import { client } from "../../../lib/client";
 const Blog = ({ data }) => {
   return (
     <>
-      <SiteHead title={"｜Blog"} description={data.description} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${data.id}`} />
+      <SiteHead title={`｜${data.title}`} description={data.description} keyword={""} url={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${data.id}`} image={data.thumbnail.url} />
       <Container>
         <div className="mt-[160px] md:mt-[200px]">
           <div className="rounded-[10px] overflow-hidden">

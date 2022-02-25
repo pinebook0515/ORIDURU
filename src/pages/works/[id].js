@@ -10,7 +10,7 @@ const Work = ({ data }) => {
   return (
     <>
       <SiteHead
-        title={"｜Works"}
+        title={`｜${data.title}`}
         description={"実績 - ORIDURUは、マツモトタクムが運営する個人サイトです。フリーランスでPM、WEBディレクター、デザイナー、フロントエンドエンジニアとして活動しています。"}
         keyword={""}
         url={`${process.env.NEXT_PUBLIC_BASE_URL}/works/${data.id}`}
