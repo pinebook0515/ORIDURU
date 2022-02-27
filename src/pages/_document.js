@@ -11,6 +11,13 @@ const Document = () => {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet" />
       </Head>
       <body className="w-full bg-black">
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSX3P3N"
+            height="0" width="0" style="display:none;visibility:hidden"/>`,
+          }}
+        />
         <Main />
         <NextScript />
       </body>
