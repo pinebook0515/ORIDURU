@@ -1,10 +1,14 @@
 import "../../styles/globals.css";
 import Layout from "../components/layouts/Layout";
+import GoogleTagManager from "../components/common/GoogleTagManager";
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <GoogleTagManager />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 };
 
