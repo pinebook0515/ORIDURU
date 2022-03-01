@@ -49,7 +49,7 @@ const Header = () => {
     <ul className={`${styles.header__nav} lg:flex justify-end hidden`}>
       <li className="ml-[60px]">
         <Link href="/about">
-          <a className="font-en text-[14px] text-white">About</a>
+          <a className="font-en text-[14px] text-white">Readme</a>
         </Link>
       </li>
       <li className="ml-[60px]">

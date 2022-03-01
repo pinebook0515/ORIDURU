@@ -75,4 +75,11 @@
     z-index: -1;
     border-radius: 10px;
   }
+  blockquote {
+    @apply text-gray text-[13px] bg-black-dark rounded-[5px] px-[16px] py-[16px] my-[40px] lg:text-[15px]  lg:px-[24px] lg:py-[24px] lg:my-[60px];
+  }
+  .to_top {
+    @apply text-gray text-[13px] bg-black-dark rounded-[5px] px-[24px] py-[8px] mt-[60px];
+    text-decoration: none;
+  }
 }

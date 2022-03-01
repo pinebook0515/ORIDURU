@@ -7,8 +7,8 @@ const Menu = () => {
       <li className={`${styles.menu_listItem}`}>
         <Link href="/about">
           <a className="block py-[24px]">
-            <h2 className={`${styles.menu_heading} flex items-end font-en text-white text-[20px]`}>About</h2>
-            <p className="font-en text-gray text-[14px]">Brief introduction about me</p>
+            <h2 className={`${styles.menu_heading} flex items-end font-en text-white text-[20px]`}>Readme</h2>
+            <p className="font-en text-gray text-[14px]">Brief description about me</p>
           </a>
         </Link>
       </li>
